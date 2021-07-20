@@ -9,8 +9,12 @@ export class AppComponent {
   query: string;
   artists: any[];
 
+  showArtist(item: string) {
+    this.query = item;
+  }
+
   constructor() {
-    this.query = 'John';
+    this.query = '';
     this.artists = [
       {
         "name":"Barot Bellingham",
