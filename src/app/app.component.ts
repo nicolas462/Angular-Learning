@@ -9,8 +9,9 @@ export class AppComponent {
   query: string;
   artists: any[];
 
-  showArtist(item: string) {
-    this.query = item;
+  showArtist(item: { name: string; highlight: boolean;}) {
+    this.query = item.name;
+    item.highlight = !item.highlight;
   }
 
   constructor() {

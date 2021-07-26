@@ -20,9 +20,13 @@
           <a href="#" class="list-group-item list-group-item-action 
           flex-column align-items-start"
             *ngFor="let artist of artists"
-            (click) ="showArtist(artist.name)" >
+            (click) ="showArtist(artist)"
+            [style.backgroundColor]="artist.highlight ? '#EEE' : '#FFF'">
               <div class="media">
-                <div class="media-body align-self-center">
+                <div class="media">
+                  <img class="mr-3 rounded align-self-center img-fluid"
+                  style="width:70px;" [src]="'./assets/images/' + artist.shortname 
+                  + '_tn.jpg'" alt=""> <!-- [src] is safer and best practice than {{}} on load-->
                   <h5 class="m-0">{{ artist.name }}</h5>
                   {{ artist.reknown }}
                 </div><!-- media body -->
