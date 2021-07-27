@@ -9,10 +9,12 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit{
   query: string;
   artists: any[];
+  currentArtist!: Object;
 
   showArtist(item: { name: string; highlight: boolean;}) {
     this.query = item.name;
     item.highlight = !item.highlight;
+    this.currentArtist = item;
   }
 
   constructor( private http: HttpClient ) {
